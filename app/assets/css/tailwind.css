@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap");
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --page: oklch(0.98 0.008 90);        /* warm paper, matches his other apps */
+  --ink: oklch(0.22 0.02 280);
+  --ink-soft: oklch(0.48 0.02 280);
+  --card-edge: oklch(1 0 0 / 55%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: oklch(0.16 0.02 280);
+    --ink: oklch(0.97 0.005 90);
+    --ink-soft: oklch(0.72 0.02 280);
+    --card-edge: oklch(1 0 0 / 18%);
+  }
+}
+
+@layer base {
+  html {
+    /* No double-tap zoom — this is a launcher, every tap should just go. */
+    touch-action: manipulation;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--page);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  /* The title cycles through the whole wheel — you don't know where you'll land. */
+  .rainbow-text {
+    background-image: linear-gradient(
+      100deg,
+      #2f6bff, #00c2d1, #22c55e, #f9ca24, #e67e22, #ff5f8f, #a855f7, #2f6bff
+    );
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow-pan 12s linear infinite;
+  }
+
+  @keyframes rainbow-pan {
+    to { background-position: 300% 0; }
+  }
+
+  /* Slow drifting colour blobs behind everything. */
+  .blob {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(70px);
+    opacity: 0.5;
+    animation: drift 18s ease-in-out infinite;
+  }
+
+  @keyframes drift {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33%      { transform: translate(24px, -20px) scale(1.12); }
+    66%      { transform: translate(-18px, 16px) scale(0.94); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rainbow-text { animation: none; }
+    .blob { animation: none; }
+  }
+}
