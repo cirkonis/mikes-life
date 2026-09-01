@@ -25,6 +25,15 @@ const apps = [
     to: '#ff9a4a',
   },
   {
+    name: 'Mikes Shamisen',
+    tagline: 'Shamisen tabs, written down and saved',
+    url: 'https://mikes-shamisen.vercel.app/',
+    cadence: 'Practice',
+    emoji: '🪕',
+    from: '#6a439b',
+    to: '#4c55bc',
+  },
+  {
     name: 'Drunk Chicken Hunt',
     tagline: 'Find them before the money runs out',
     url: 'https://chicken-hunt.com/',
