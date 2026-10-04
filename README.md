@@ -2,7 +2,7 @@
 
 A little place where I house the apps I build that I use the most.
 
-One page, four cards, no database. It exists so there's a single thing to keep
+One page, a card per app, no database. It exists so there's a single thing to keep
 open on my phone instead of hunting for bookmarks.
 
 ## Stack
@@ -31,8 +31,9 @@ entry and it renders:
 | `cadence` | How often it actually gets used — drives the ordering |
 | `emoji` | Icon badge and the oversized watermark |
 | `from` / `to` | Gradient stops |
+| `accent` | Optional solid colour for the cadence pill (dark text) |
 
 Cards are ordered by how often they're opened, not alphabetically. Each gradient
-starts from that app's real brand colour — Macros blue, Finances rose, Chicken
-Hunt orange, Bullies pink — then reaches toward a neighbouring hue so the page
+starts from that app's real brand colour — Macros blue, Finances rose, Yahtzee
+red (with its yellow on the pill), Chicken Hunt orange, Bullies pink — then reaches toward a neighbouring hue so the page
 as a whole reads as a rainbow.

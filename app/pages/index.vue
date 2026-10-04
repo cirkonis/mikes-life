@@ -34,6 +34,16 @@ const apps = [
     to: '#4c55bc',
   },
   {
+    name: "Olivia's Yahtzee",
+    tagline: 'The score sheet, made for thumbs',
+    url: 'https://olivias-yahtzee.vercel.app/',
+    cadence: 'Game nights',
+    emoji: '🎲',
+    from: '#d6202a',
+    to: '#7a0f16',
+    accent: '#f5d327',
+  },
+  {
     name: 'Drunk Chicken Hunt',
     tagline: 'Find them before the money runs out',
     url: 'https://chicken-hunt.com/',

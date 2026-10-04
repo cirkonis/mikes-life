@@ -11,6 +11,8 @@ defineProps<{
   /** Two stops rooted in that app's real brand colour. */
   from: string
   to: string
+  /** Optional solid brand colour for the cadence pill, with dark text — e.g. Yahtzee yellow. */
+  accent?: string
 }>()
 </script>
 
@@ -40,7 +42,11 @@ defineProps<{
       <div class="min-w-0 flex-1 pt-0.5">
         <h2 class="text-xl leading-tight font-extrabold text-white drop-shadow-sm">{{ name }}</h2>
         <p class="mt-1 text-sm font-medium text-white/85">{{ tagline }}</p>
-        <span class="mt-3 inline-block rounded-full bg-white/25 px-2.5 py-1 text-[11px] font-bold tracking-wide text-white uppercase backdrop-blur-sm">
+        <span
+          class="mt-3 inline-block rounded-full px-2.5 py-1 text-[11px] font-bold tracking-wide uppercase"
+          :class="accent ? 'text-neutral-900' : 'bg-white/25 text-white backdrop-blur-sm'"
+          :style="accent ? { backgroundColor: accent } : undefined"
+        >
           {{ cadence }}
         </span>
       </div>
